@@ -1,7 +1,7 @@
 
 # A very simple Flask Hello World app for you to get started with...
 
-from flask import Flask, request
+from flask import Flask, request, render_template
 import git, hmac, hashlib, os, sys, io, eNotify, traceback
 
 oldstdOut = sys.stdout
@@ -24,7 +24,7 @@ w_secret = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def hello_world():
-    return 'Hello from Flask!'
+    return render_template('Web/index.html')
 
 
 @app.route('/update_server', methods=['POST'])

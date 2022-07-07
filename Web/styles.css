@@ -1,0 +1,147 @@
+@font-face {
+  font-family: Open Sans;
+  src: url(OpenSans/OpenSans-Light.ttf);
+}
+
+h1 {font-size: 1rem;}
+h2 {font-size: 0.75rem;}
+h3 {font-size: 0.875rem;}
+h1, h2, h3 {cursor: default;}
+
+html * {
+    font-family: Open Sans;
+    margin: 0;
+    box-sizing: border-box;
+    color: white;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #121212;
+}
+
+.left-card {
+    width: 50%;
+    height: 100%;
+    background: #2b2b2b;
+    padding: 3em 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+    .numbers {
+        height: 100%;
+        width: 2.25em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 1.5rem;
+    }
+
+    .number {
+        height: 2em;
+        width: 2em;
+        border-radius: 100vmax;
+        box-shadow: 0 0 0 2px white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+
+    .steps {
+        height: 100%;
+        width: calc(100% - 5em);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .step {
+        font-size: 1.5rem;
+        height: 2em;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+.right-card {
+    position: relative;
+    padding: 3em 2em;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .field {
+        width: 100%;
+        margin: 0.5em 0 0;
+        padding: 0.5em 1em;
+        background: #454545;
+        border:  none;
+        border-radius: 0.5em;
+        font-size: 1rem;
+    }
+
+    ::placeholder {
+    color: grey;
+    }
+
+    .field:focus {
+    outline: none;
+    }
+
+    .path-container {
+        margin:  0.5em 0 0 ;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        background: #454545;
+        border-radius: 0.5em;
+    }
+
+    #file-path {
+        padding: 0.5em 0 0.5em 1em;
+        margin: 0;
+        cursor: default;
+        width: calc(35ch - 3.5em);
+    }
+
+    #file-dialog {
+        font-size: 1.75rem;
+        font-variation-settings:
+            'FILL' 0,
+            'wght' 300,
+            'GRAD' 0,
+            'opsz' 48;
+        /*position: absolute;*/
+        margin: 0 0.5em;
+        cursor: pointer;
+        background: #454545;
+    }
+
+    #report {
+        margin: 2em 0 0;
+    }
+
+    .generate-report {
+        padding: 0.5em 0;
+        background: #00BF80;
+        border-radius: 100vmax;
+        font-size: 1rem;
+        border: 0;
+        color: black;
+        cursor: pointer;
+        position: absolute;
+        bottom: 3em;
+        width: calc(100% - 4em);
+    }
