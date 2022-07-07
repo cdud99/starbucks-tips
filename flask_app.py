@@ -21,6 +21,8 @@ def is_valid_signature(x_hub_signature, data, private_key):
 
 w_secret = os.getenv('SECRET_KEY')
 
+#Works?
+
 @app.route('/')
 def hello_world():
     return 'Hello from Flask!'
