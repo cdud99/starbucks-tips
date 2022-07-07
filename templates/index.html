@@ -6,42 +6,44 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
-        <div class="left-card">
-            <div class="numbers">
-                <div class="number" id="one">1</div>
-                <div class="number" id="two">2</div>
-                <div class="number" id="three">3</div>
-                <div class="number" id="four">4</div>
-                <div class="number" id="five">5</div>
+        <div class="card">
+            <div class="left-card">
+                <div class="numbers">
+                    <div class="number" id="one">1</div>
+                    <div class="number" id="two">2</div>
+                    <div class="number" id="three">3</div>
+                    <div class="number" id="four">4</div>
+                    <div class="number" id="five">5</div>
+                </div>
+                <div class="steps">
+                    <div class="step">
+                        <h3 class="step-text">Count all tips from previous week and exclude any loose coins not in a roll</h3>
+                    </div>
+                    <div class="step">
+                        <h3 class="step-text">Enter the total tip amount in the first field</h3>
+                    </div>
+                    <div class="step">
+                        <h3 class="step-text">Download tip distribution report from previous week</h3>
+                    </div>
+                    <div class="step">
+                        <h3 class="step-text">Click the folder in the second field to browse for the tip report pdf file</h3>
+                    </div>
+                    <div class="step">
+                        <h3 class="step-text">Click “Generate Report” button and print the report</h3>
+                    </div>
+                </div>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <h3 class="step-text">Count all tips from previous week and exclude any loose coins not in a roll</h3>
+            <div class="right-card">
+                <h1 id="tips">Enter tip amount:</h1>
+                <h2 id="title">(Must be a whole number)</h2>
+                <input class="field" id="tip-amount" placeholder="Ex: 300"></input>
+                <h1 id="report">Select Starbucks Tip Report:</h1>
+                <div class="path-container">
+                    <input class="field" id="file-path" readonly>
+                    <i class="material-symbols-outlined" id="file-dialog">folder</i>
                 </div>
-                <div class="step">
-                    <h3 class="step-text">Enter the total tip amount in the first field</h3>
-                </div>
-                <div class="step">
-                    <h3 class="step-text">Download tip distribution report from previous week</h3>
-                </div>
-                <div class="step">
-                    <h3 class="step-text">Click the folder in the second field to browse for the tip report pdf file</h3>
-                </div>
-                <div class="step">
-                    <h3 class="step-text">Click “Generate Report” button and print the report</h3>
-                </div>
+                <button class="generate-report" id="generate-report">Generate Report</button>
             </div>
-        </div>
-        <div class="right-card">
-            <h1 id="tips">Enter tip amount:</h1>
-            <h2 id="title">(Must be a whole number)</h2>
-            <input class="field" id="tip-amount" placeholder="Ex: 300"></input>
-            <h1 id="report">Select Starbucks Tip Report:</h1>
-            <div class="path-container">
-                <input class="field" id="file-path" readonly>
-                <i class="material-symbols-outlined" id="file-dialog">folder</i>
-            </div>
-            <button class="generate-report" id="generate-report">Generate Report</button>
         </div>
     </body>
     <script type="text/javascript" src="static/script.js"></script>
