@@ -24,7 +24,7 @@ w_secret = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def hello_world():
-    return render_template('Web/index.html')
+    return render_template('index.html')
 
 
 @app.route('/update_server', methods=['POST'])
