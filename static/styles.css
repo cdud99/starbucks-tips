@@ -24,10 +24,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: #787878;
+    background-image: linear-gradient(to bottom right, #00704A, #00bf80);
 }
 
 .card {
-    
+    display: flex;
+    background: #121212;
+    border-radius: 2em;
+    overflow: hidden;
 }
 
 .left-card {
@@ -40,11 +45,11 @@ body {
 }
 
     .numbers {
-        height: 100%;
         width: 2.25em;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
         font-size: 1.5rem;
     }
 
@@ -75,11 +80,14 @@ body {
         align-items: center;
     }
 
+    .step + .step {
+        margin: 1em 0 0;
+    }
+
 .right-card {
     position: relative;
     padding: 3em 2em;
     width: 50%;
-    height: 100%;
     display: flex;
     flex-direction: column;
 }
