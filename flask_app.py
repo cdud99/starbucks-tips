@@ -11,7 +11,7 @@ from ProcessedTips.FileManager import main as checkFiles
 
 oldstdOut = sys.stdout
 outputToSend = io.StringIO()
-sys.stdout = sys.stderr
+sys.stdout = outputToSend
 
 app = Flask(__name__)
 
