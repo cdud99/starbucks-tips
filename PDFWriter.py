@@ -38,7 +38,7 @@ def writePDF(pdf, key):
 
 
 
-    doc = SimpleDocTemplate('ProcessedTips/{}.pdf'.format(key), pagesize=LETTER)
+    doc = SimpleDocTemplate('static/{}.pdf'.format(key), pagesize=LETTER)
     modules = []
 
     #Create the title and headings

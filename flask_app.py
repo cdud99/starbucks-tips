@@ -7,7 +7,7 @@ import hmac, hashlib, os, sys, io, eNotify, traceback, secrets
 from PDFReader import scanPDF
 from PDFWriter import writePDF
 
-from ProcessedTips.FileManager import main as checkFiles
+from FileManager import main as checkFiles
 
 oldstdOut = sys.stdout
 outputToSend = io.StringIO()
@@ -29,7 +29,7 @@ w_secret = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def hello_world():
-    checkFiles('.')
+    checkFiles('static')
 
     return render_template('index.html')
 
