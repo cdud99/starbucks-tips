@@ -15,6 +15,8 @@ sys.stdout = outputToSend
 
 app = Flask(__name__)
 
+processedReportsPath = '/home/cdud99/webupdater/static/ProcessedTips'
+
 def is_valid_signature(x_hub_signature, data, private_key):
     # x_hub_signature and data are from the webhook payload
     # private key is your webhook secret
@@ -37,17 +39,17 @@ def hello_world():
 @app.route('/process-report', methods=['POST', 'GET'])
 def process_report():
     if request.method == 'POST':
-        amount = request.form['tip-amount']
-        print(amount, file=sys.stderr)
+        amount = int(request.form['tip-amount'])
 
         file = request.files['file']
 
-        key = secrets.token_hex(10)
+        fileName = secrets.token_hex(10) + '.pdf'
+        filePath = os.path.join(processedReportsPath, fileName)
 
-        pdf = scanPDF(file, int(amount))
-        writePDF(pdf, key)
+        pdf = scanPDF(file, amount)
+        writePDF(pdf, filePath)
 
-        return send_file('/home/cdud99/webupdater/static/ProcessedTips/{}.pdf'.format(key), as_attachment=True, attachment_filename='CalculatedTips.pdf')
+        return send_file(filePath, as_attachment=True, attachment_filename='CalculatedTips.pdf')
 
 
     return redirect('/')
