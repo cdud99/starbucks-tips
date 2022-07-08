@@ -120,25 +120,46 @@ body {
         border-radius: 0.5em;
     }
 
-    #file-path {
+    #file-name {
         padding: 0.5em 0 0.5em 1em;
         margin: 0;
         cursor: default;
-        width: calc(35ch - 3.5em);
+        width: 100%;
     }
 
-    #file-dialog {
+    .file-dialog-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 1.75em;
+        width: 1.75em;
+        margin: 0 1em;
+        /*cursor: pointer;*/
+        background: #454545;
+    }
+
+    #file-dialog-icon {
+        position: absolute;
         font-size: 1.75rem;
         font-variation-settings:
             'FILL' 0,
             'wght' 300,
             'GRAD' 0,
             'opsz' 48;
-        /*position: absolute;*/
-        margin: 0 0.5em;
         cursor: pointer;
-        background: #454545;
     }
+
+    #file-dialog {
+        display: none;
+    }
+
+    /*.file {
+        position: absolute;
+        width: 1.75em;
+        height: 1.75em;
+        opacity: 0;
+    }*/
 
     #report {
         margin: 2em 0 0;

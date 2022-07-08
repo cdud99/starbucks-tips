@@ -1,21 +1,8 @@
-function setPath(path) {
-    document.getElementById('file-path').value = path
-}
+let fileDialog = document.getElementById("file-dialog");
+let fileName = document.getElementById("file-name")
 
-document.getElementById('file-dialog').addEventListener('click', event => {
-    pywebview.api.openDialog().then(setPath)
-})
+fileDialog.addEventListener("change", ()=>{
+    let file = document.querySelector("input[type=file]").files[0];
 
-
-
-document.getElementById('generate-report').addEventListener('click', event => {
-    path = document.getElementById('file-path').value
-
-    totalTipsStr = document.getElementById('tip-amount').value
-    if(typeof totalTipsStr == 'string') {
-        num = Number(totalTipsStr)
-        if(Number.isInteger(num) && num > 0) {
-            window.pywebview.api.createNewReport(path, num)
-        }
-    }
+    fileName.value = file.name;
 })

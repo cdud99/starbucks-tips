@@ -34,15 +34,20 @@
                 </div>
             </div>
             <div class="right-card">
-                <h1 id="tips">Enter tip amount:</h1>
-                <h2 id="title">(Must be a whole number)</h2>
-                <input class="field" id="tip-amount" placeholder="Ex: 300"></input>
-                <h1 id="report">Select Starbucks Tip Report:</h1>
-                <div class="path-container">
-                    <input class="field" id="file-path" readonly>
-                    <i class="material-symbols-outlined" id="file-dialog">folder</i>
-                </div>
-                <button class="generate-report" id="generate-report">Generate Report</button>
+                <form method="post" enctype=multipart/form-data action="/process-report">
+                    <h1 id="tips">Enter tip amount:</h1>
+                    <h2 id="title">(Must be a whole number)</h2>
+                    <input class="field" id="tip-amount" name="tip-amount" placeholder="Ex: 300"></input>
+                    <h1 id="report">Select Starbucks Tip Report:</h1>
+                    <div class="path-container">
+                        <input class="field" id="file-name" readonly>
+                        <div class="file-dialog-box">
+                            <input id="file-dialog" type="file" name="file"/>
+                            <label for="file-dialog" class="material-symbols-outlined" id="file-dialog-icon">folder</i>
+                        </div>
+                    </div>
+                    <button class="generate-report" id="generate-report">Generate Report</button>
+                </form>
             </div>
         </div>
     </body>
