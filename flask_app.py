@@ -47,7 +47,7 @@ def process_report():
         pdf = scanPDF(file, int(amount))
         writePDF(pdf, key)
 
-        return send_file('ProcessedTips/{}.pdf'.format(key), as_attachment=True, attachment_filename='CalculatedTips.pdf')
+        return send_file('{}.pdf'.format(key), as_attachment=True, attachment_filename='CalculatedTips.pdf')
 
 
     return redirect('/')
