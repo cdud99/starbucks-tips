@@ -29,7 +29,7 @@ w_secret = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def hello_world():
-    checkFiles('static')
+    checkFiles('/home/cdud99/webupdater/static/ProcessedTips')
 
     return render_template('index.html')
 
@@ -47,7 +47,7 @@ def process_report():
         pdf = scanPDF(file, int(amount))
         writePDF(pdf, key)
 
-        return send_file('{}.pdf'.format(key), as_attachment=True, attachment_filename='CalculatedTips.pdf')
+        return send_file('/home/cdud99/webupdater/static/ProcessedTips/{}.pdf'.format(key), as_attachment=True, attachment_filename='CalculatedTips.pdf')
 
 
     return redirect('/')
