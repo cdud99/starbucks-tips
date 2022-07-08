@@ -29,7 +29,7 @@ w_secret = os.getenv('SECRET_KEY')
 
 @app.route('/')
 def hello_world():
-    checkFiles('ProcessedTips')
+    checkFiles('.')
 
     return render_template('index.html')
 
