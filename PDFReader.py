@@ -19,7 +19,8 @@ def scanPDF(file, totalTips):
             lines = page.extract_text().split('\n')
 
             # Set the heading text with list comprehension using the "lines" variable
-            returnData['heading'] = [line for i, line in enumerate(lines) if 0 < i and i < 5 and x == 0]
+            if x == 0:
+                returnData['heading'] = [line for i, line in enumerate(lines) if i > 0 and i < 5]
 
             # Loop through all lines
             for line in lines:
@@ -68,21 +69,21 @@ def scanPDF(file, totalTips):
 
 # For debugging
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-#     pdf = scanPDF('PATH_TO_TIP_REPORT', 400)
+    pdf = scanPDF('/Users/cdudley/Downloads/TipReport_6:20_6:26.pdf', 400)
 
-#     print('\n'.join(pdf['heading']), end='\n\n')
-#     print('Total hours:', pdf['totalHours'])
-#     print('Total tips:', pdf['totalTips'])
-#     print('Total after payout:', pdf['totalAfterPayout'])
-#     print('Rate:', pdf['rate'] end='\n\n')
-#     for partner in pdf['partners']:
-#         print('Store:', partner['store'])
-#         print('First:', partner['first'])
-#         print('Last:', partner['last'])
-#         print('Numbers:', partner['numbers'])
-#         print('Hours:', partner['hours'])
-#         print('Tips:', partner['tips'], end='\n\n')
+    print(pdf['heading'], end='\n\n')
+    print('Total hours:', pdf['totalHours'])
+    print('Total tips:', pdf['totalTips'])
+    print('Total after payout:', pdf['totalAfterPayout'])
+    print('Rate:', pdf['rate'], end='\n\n')
+    for partner in pdf['partners']:
+        print('Store:', partner['store'])
+        print('First:', partner['first'])
+        print('Last:', partner['last'])
+        print('Numbers:', partner['numbers'])
+        print('Hours:', partner['hours'])
+        print('Tips:', partner['tips'], end='\n\n')
 
 
