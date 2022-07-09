@@ -1,9 +1,11 @@
+#!/usr/bin/env python3
+
 import smtplib
 from email.message import EmailMessage
 from email.utils import formataddr
 
 
-def notify(body):
+def notify(subject, body):
     gmail_user = 'python.notification.99@gmail.com'
     gmail_password = 'yleavhdinhfbcled'
 
