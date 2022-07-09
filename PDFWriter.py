@@ -83,7 +83,7 @@ def writePDF(pdf, path):
 
         # Right justifys text by adding a space, however two spaces equal one character
         # so this replaces the one space with two so it lines up in the document
-        partnerHours = partner['hours'].rjust(5, ' ').replace(' ', '  ')
+        partnerHours = str(partner['hours']).rjust(5, ' ').replace(' ', '  ')
         partnerTips = str(partner['tips']).rjust(2, ' ').replace(' ', '  ')
 
         data.append([partner['store'], partnerName, partner['numbers'], partnerHours, partnerTips])
