@@ -89,7 +89,7 @@ def writePDF(pdf, path):
         data.append([partner['store'], partnerName, partner['numbers'], partnerHours, partnerTips])
     
     # Create summary at the bottom of the table
-    data.append(['Totals:', '', '', pdf['totalHours'], pdf['totalTips']])
+    data.append(['Totals:', '', '', pdf['totalHours'], pdf['totalAfterPayout']])
 
     # Creates a table style that adds a line under the table heading and above the table summary
     tableStyle = TableStyle([
