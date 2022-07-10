@@ -110,6 +110,13 @@ body {
     outline: none;
     }
 
+    #tip-error, #file-error {
+        color: red;
+        font-size: 0.875rem;
+        margin: 0.5em 0 0;
+        height: 0.875em;
+    }
+
     .path-container {
         margin:  0.5em 0 0 ;
         position: relative;
@@ -162,7 +169,7 @@ body {
     }*/
 
     #report {
-        margin: 2em 0 0;
+        margin: 1.375em 0 0;
     }
 
     .generate-report {

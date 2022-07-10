@@ -34,10 +34,11 @@
                 </div>
             </div>
             <div class="right-card">
-                <form method="post" enctype=multipart/form-data action="/process-report">
+                <form method="post" enctype=multipart/form-data action="/process-report" onsubmit="return validateForm()">
                     <h1 id="tips">Enter tip amount:</h1>
                     <h2 id="title">(Must be a whole number)</h2>
                     <input class="field" id="tip-amount" name="tip-amount" placeholder="Ex: 300"></input>
+                    <h2 id="tip-error"></h2>
                     <h1 id="report">Select Starbucks Tip Report:</h1>
                     <div class="path-container">
                         <input class="field" id="file-name" readonly>
@@ -46,6 +47,7 @@
                             <label for="file-dialog" class="material-symbols-outlined" id="file-dialog-icon">folder</i>
                         </div>
                     </div>
+                    <h2 id="file-error"></h2>
                     <button class="generate-report" id="generate-report">Generate Report</button>
                 </form>
             </div>
