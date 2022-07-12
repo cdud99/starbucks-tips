@@ -43,11 +43,20 @@ def index():
 
     # Set up try/except block in case of error
     try:
+
+        amount = ''
+        invalidPDF = ''
+
+        if request.args.get('amount') != None:
+            amount = request.args['amount']
+        if request.args.get('invalidPDF') != None:
+            invalidPDF = request.args['invalidPDF']
+
         # Run script to check whether files have expired and delete them
         checkFiles('/home/cdud99/webupdater/static/ProcessedTips')
 
         # Let flask render index.html file
-        return render_template('index.html')
+        return render_template('index.html', amount = amount, invalidPDF = invalidPDF)
 
     # Catch exception in variable "e"
     except Exception as e:
@@ -85,6 +94,10 @@ def process_report():
 
             # Extract text from Starbucks tip report and organize into dict
             pdf = scanPDF(file, amount)
+
+            # If scanPDF returns None it means the pdf submitted was invalid
+            if pdf == None:
+                return redirect('/amount={}&invalidPDF={}'.format(amount, true))
 
             # Write the new tip report using the dict
             writePDF(pdf, filePath)

@@ -37,6 +37,11 @@
                 <form method="post" enctype=multipart/form-data action="/process-report" onsubmit="return validateForm()">
                     <h1 id="tips">Enter tip amount:</h1>
                     <h2 id="title">(Must be a whole number)</h2>
+                    {% if amount == '': %}
+                    <input class="field" id="tip-amount" name="tip-amount" placeholder="Ex: 300"></input>
+                    {% else %}
+                    <input class="field" id="tip-amount" name="tip-amount" placeholder="Ex: 300" value="{{amount}}"></input>
+                    {% endif %}
                     <input class="field" id="tip-amount" name="tip-amount" placeholder="Ex: 300"></input>
                     <h2 id="tip-error"></h2>
                     <h1 id="report">Select Starbucks Tip Report:</h1>
@@ -54,4 +59,9 @@
         </div>
     </body>
     <script type="text/javascript" src="static/script.js"></script>
+    <script>
+        {% if invalidPDF == "true": %}
+            alert('The PDF you submitted is invalid')
+        {% endif %}
+    </script>
 </html>
