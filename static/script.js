@@ -26,7 +26,7 @@ fileDialog.addEventListener("change", ()=>{
 function validateForm() {
 
     // Set submit flag
-    flag = false
+    flag = true
 
     tipError.innerHTML = ''
     fileError.innerHTML = ''
