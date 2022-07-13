@@ -17,7 +17,7 @@ def validatePDF(pdf):
         if i == 0:
             pdfGiven.append(line)
         elif i > 0 and i < 5:
-            pdfGiven.append(line[:line.index(':') + 1])
+            pdfGiven.append(line if line.find(':') == -1 else line[:line.find(':') + 1])
         elif i == 5:
             pdfGiven.append(line)
 
