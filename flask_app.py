@@ -53,7 +53,7 @@ def index():
             invalidPDF = request.args['invalidPDF']
 
         # Run script to check whether files have expired and delete them
-        checkFiles('/home/cdud99/webupdater/static/ProcessedTips')
+        checkFiles(processedReportsPath)
 
         # Let flask render index.html file
         return render_template('index.html', amount = amount, invalidPDF = invalidPDF)
@@ -97,7 +97,7 @@ def process_report():
 
             # If scanPDF returns None it means the pdf submitted was invalid
             if pdf == None:
-                return redirect('/amount={}&invalidPDF={}'.format(amount, true))
+                return redirect('/?amount={}&invalidPDF={}'.format(amount, 'true'))
 
             # Write the new tip report using the dict
             writePDF(pdf, filePath)
