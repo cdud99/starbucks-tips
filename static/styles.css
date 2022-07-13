@@ -107,7 +107,7 @@ body {
     }
 
     .field:focus {
-    outline: none;
+        outline: none;
     }
 
     #tip-error, #file-error {
