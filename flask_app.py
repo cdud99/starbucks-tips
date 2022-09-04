@@ -178,6 +178,12 @@ def webhook():
     else:
         return 'Wrong input type', 400
 
+@app.route('/getSQ', methods=['GET'])
+def get_security_questions():
+    if request.method == 'GET':
+        value = request.headers.get('test')
+        return 'Recieved'
+
 # For local testing only
 # if __name__ == '__main__':
 #     app.run(debug=True, port=5001)
