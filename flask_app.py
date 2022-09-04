@@ -17,6 +17,7 @@ app = Flask(__name__)
 
 # Set absolute path to processed tips folder
 processedReportsPath = '/home/cdud99/webupdater/static/ProcessedTips'
+# processedReportsPath = 'static/ProcessedTips'
 
 # Get secret key to verify with GitHub
 w_secret = os.getenv('SECRET_KEY')
