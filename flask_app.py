@@ -182,7 +182,7 @@ def webhook():
 def get_security_questions():
     if request.method == 'GET':
         value = request.headers.get('test')
-        return 'Recieved'
+        return ['Recieved', 'Another']
 
 # For local testing only
 # if __name__ == '__main__':
