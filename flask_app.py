@@ -184,7 +184,7 @@ def get_security_questions():
         value = request.headers.get('test')
         return {
         'question_one': 'test',
-        'question_two': 'test2',
+        'question_two': value,
         }
 
 # For local testing only
