@@ -129,6 +129,7 @@ def get_sq(numbers):
     questions = []
 
     driver = get_driver()
+    timeoutTime = 30
 
     while len(questions) < 2:
         driver.get('https://mysite.starbucks.com/Person.aspx')
