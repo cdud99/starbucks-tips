@@ -11,7 +11,7 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-def get_info(numbers, question_one, answer_one, question_two, answer_two):
+def get_info(numbers, question_one, answer_one, question_two, answer_two, password):
 
     timeoutTime = 30;
 
