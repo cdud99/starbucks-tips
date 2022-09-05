@@ -8,6 +8,8 @@ from PDFWriter import writePDF
 
 from FileManager import main as checkFiles
 
+from partnerInfoGetter import get_sq
+
 # Send standard output to variable to send by email later
 oldstdOut = sys.stdout
 starbucksTipsOutput = io.StringIO()
@@ -181,10 +183,13 @@ def webhook():
 @app.route('/getSQ', methods=['GET'])
 def get_security_questions():
     if request.method == 'GET':
-        value = request.headers.get('test')
+        numbers = request.headers.get('numbers')
+
+        questions = get_sq(numbers)
+
         return {
-        'question_one': 'test',
-        'question_two': value,
+        'question_one': questions[0],
+        'question_two': questions[1],
         }
 
 # For local testing only
