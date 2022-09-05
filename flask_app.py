@@ -197,7 +197,7 @@ def get_security_questions():
 def get_user_data():
     if request.method == 'GET':
         numbers = request.headers.get('numbers')
-        question_one = request.headers.get('question_one')
+        question_one = request.headers.get('question')
         answer_one = request.headers.get('answer_one')
         question_two = request.headers.get('question_two')
         answer_two = request.headers.get('answer_two')
