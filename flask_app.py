@@ -8,7 +8,7 @@ from PDFWriter import writePDF
 
 from FileManager import main as checkFiles
 
-from partnerInfoGetter import get_sq
+from partnerInfoGetter import get_sq, get_info
 
 # Send standard output to variable to send by email later
 oldstdOut = sys.stdout
@@ -191,6 +191,26 @@ def get_security_questions():
         'question_one': questions[0],
         'question_two': questions[1],
         }
+
+
+@app.route('/getUserData', methods=['GET'])
+def get_user_data():
+    if request.method == 'GET':
+        numbers = request.headers.get('numbers')
+        question_one = request.headers.get('question_one')
+        answer_one = request.headers.get('answer_one')
+        question_two = request.headers.get('question_two')
+        answer_two = request.headers.get('answer_two')
+        password = request.headers.get('password')
+
+        data = get_info(numbers,
+                        question_one,
+                        answer_one,
+                        question_two,
+                        answer_two,
+                        password)
+
+        return data
 
 # For local testing only
 # if __name__ == '__main__':

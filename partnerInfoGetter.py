@@ -11,18 +11,12 @@ from selenium.common.exceptions import NoSuchElementException, StaleElementRefer
 from selenium.webdriver.common.action_chains import ActionChains
 
 
-def get_info():
+def get_info(numbers, question_one, answer_one, question_two, answer_two):
 
-    numbers = 'US2768434'
-    password = 'Scooter209*'
-    timeoutTime = 10;
+    timeoutTime = 30;
 
     # Initialize Selenium Chrome WebDriver
-    ser = Service('/Users/cdudley/Documents/Chrome Driver/chromedriver')
-    op = Options()
-    op.add_experimental_option('detach', True)
-    driver = webdriver.Chrome(service=ser, options=op)
-    driver.set_window_size(1200, 810)
+    driver = get_driver()
 
     # Go to url for partner info
     driver.get('https://mysite.starbucks.com/Person.aspx')
@@ -70,10 +64,10 @@ def get_info():
     securityQuestion = str(driver.find_element(By.ID, 'ContentPlaceHolder1_MFALoginControl1_KBARegistrationView_lblKBQ1').text)
 
     answer = ''
-    if(securityQuestion == 'What city were you born in?'): #What city were you born in?
-        answer = 'San Diego'
-    elif(securityQuestion == 'In what city did you meet your spouse/significant other?'): #In what city did you meet your spouse/significant other?
-        answer = 'Poway'
+    if(securityQuestion == question_one):
+        answer = answer_one
+    elif(securityQuestion == question_two):
+        answer = answer_two
     else:
         raise Exception('Security question not recognized')
 
@@ -120,8 +114,12 @@ def get_info():
     WebDriverWait(driver, timeoutTime).until(lambda d: d.find_element(By.ID, 'ctl00_ctl40_g_151d28df_c666_4083_8cb8_34a60bc8b6dd_lbUserJobTitle'))
     position = driver.find_element(By.ID, 'ctl00_ctl40_g_151d28df_c666_4083_8cb8_34a60bc8b6dd_lbUserJobTitle').text
     store = driver.find_element(By.ID, 'ctl00_ctl40_g_151d28df_c666_4083_8cb8_34a60bc8b6dd_lbUserDepartment').text
-    print('Position:', position)
-    print('Store:', store)
+    store = store[store.find(' ') + 1:]
+
+    return {
+        'position': position,
+        'store': store,
+    }
 
 
 def get_sq(numbers):
