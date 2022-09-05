@@ -172,7 +172,8 @@ def get_sq(numbers):
         print('Security Question')
         WebDriverWait(driver, timeoutTime).until(lambda d: d.find_element(By.ID, 'ContentPlaceHolder1_MFALoginControl1_KBARegistrationView_lblKBQ1'))
         securityQuestion = str(driver.find_element(By.ID, 'ContentPlaceHolder1_MFALoginControl1_KBARegistrationView_lblKBQ1').text)
-        questions.append(securityQuestion)
+        if securityQuestion not in questions:
+            questions.append(securityQuestion)
 
     return questions
 
