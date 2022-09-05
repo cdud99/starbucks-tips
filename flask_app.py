@@ -196,14 +196,12 @@ def get_security_questions():
 @app.route('/getUserData', methods=['GET'])
 def get_user_data():
     if request.method == 'GET':
-        numbers = request.headers.get('numbers')
-        question_one = request.headers.get('question')
-        answer_one = request.headers.get('answer_one')
-        question_two = request.headers.get('question_two')
-        answer_two = request.headers.get('answer_two')
-        password = request.headers.get('password')
-
-        eNotify.notify('Flutter', f'{numbers} {question_one} {answer_one} {question_two} {answer_two} {password}')
+        numbers = request.headers.get('Numbers')
+        question_one = request.headers.get('Question-One')
+        answer_one = request.headers.get('Answer-One')
+        question_two = request.headers.get('Question-Two')
+        answer_two = request.headers.get('Answer-Two')
+        password = request.headers.get('Password')
 
         data = get_info(numbers,
                         question_one,
