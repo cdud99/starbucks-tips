@@ -116,6 +116,7 @@ def get_info(numbers, question_one, answer_one, question_two, answer_two):
     store = driver.find_element(By.ID, 'ctl00_ctl40_g_151d28df_c666_4083_8cb8_34a60bc8b6dd_lbUserDepartment').text
     store = store[store.find(' ') + 1:]
 
+    driver.quit()
     return {
         'position': position,
         'store': store,
@@ -173,6 +174,7 @@ def get_sq(numbers):
         if securityQuestion not in questions:
             questions.append(securityQuestion)
 
+    driver.quit()
     return questions
 
 
