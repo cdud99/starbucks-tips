@@ -70,7 +70,7 @@ def get_info(numbers, question_one, answer_one, question_two, answer_two, passwo
         answer = answer_two
     else:
         driver.quit()
-        raise Exception('Security question not recognized')
+        raise Exception('Security question not recognized' + securityQuestion)
 
     # if question == None or answer == None or password == None:
     #     return 0, securityQuestion
